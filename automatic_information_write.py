@@ -21,7 +21,7 @@ wk = xlwt.Workbook()
 sheet = wk.add_sheet ("result", cell_overwrite_ok=False)
 
 # 定义Style（指表头说明）
-style_bold = xlwt.easyxf('font: bold on')
+style_bold = xlwt.easyxf ('font: bold on')
 sheet.write_merge (0, 0, 0, 3, current_time)
 
 def compare_data (workbook_name, index_num, col_num, input_workbook_name, input_index_num, input_col_num):
