@@ -27,18 +27,18 @@ def compare_data (workbook_name, workbook_index_num, workbook_col_num, input_wor
     result = [temp for temp in process_read (workbook_name, workbook_index_num, workbook_col_num) if temp in str(to_be_compared).strip()]
     return result
 
-def process_write (result_data, workbook_name, workbook_index_num, workbook_col_num, title_name):
+def process_write (result_data, output_workbook_name, workbook_index_num, workbook_col_num, title_name):
     sheet.write (1, workbook_col_num, title_name, style_bold)
     i = 2 # 保留第一行来放时间
     for temp in result_data:
         sheet.write (i, workbook_col_num, temp)
         i = i+1
-    wk.save (workbook_name)
+    wk.save (output_workbook_name)
 
 def main():
     information_workbook = 'information.xls'
     input_workbook_name = 'input.xls'
-    output_workbook = 'output.xls'
+    output_workbook_name = 'output.xls'
     
     input_workbook_index_num = 0
     input_workbook_col = 3
@@ -48,10 +48,10 @@ def main():
     result_shu_1 = compare_data (information_workbook, 2, 0, input_workbook_name, input_workbook_index_num, input_workbook_col)
     result_shu_2 = compare_data (information_workbook, 3, 0, input_workbook_name, input_workbook_index_num, input_workbook_col)
 
-    process_write (result_shi_1, output_workbook, 0, 0, "视听一区")
-    process_write (result_shi_2, output_workbook, 0, 1, "视听二区")
-    process_write (result_shu_1, output_workbook, 0, 2, "数据一区")
-    process_write (result_shu_2, output_workbook, 0, 3, "数据二区")
+    process_write (result_shi_1, output_workbook_name, 0, 0, "视听一区")
+    process_write (result_shi_2, output_workbook_name, 0, 1, "视听二区")
+    process_write (result_shu_1, output_workbook_name, 0, 2, "数据一区")
+    process_write (result_shu_2, output_workbook_name, 0, 3, "数据二区")
 
 if __name__ == "__main__":
     main()
