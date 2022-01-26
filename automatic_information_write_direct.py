@@ -10,7 +10,7 @@ def process_read (workbook_name, workbook_index_num, workbook_col_num):
     information_sheet_col = information_sheet.col_values (workbook_col_num)
     return information_sheet_col
 
-# 提前读取出来，避免无谓的重复读取，可将CPU time 从 5s 降到 0.1sok_index_num = 0
+# 提前读取出来，避免无谓的重复读取，可将CPU time 从 5s 降到 0.1s
 def process_get_data (input_workbook, input_workbook_index_num, input_workbook_col):
     return process_read (input_workbook, input_workbook_index_num, input_workbook_col)
 
