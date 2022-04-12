@@ -53,5 +53,10 @@ def main():
     process_write (result_shu_1, output_workbook_name, 0, 2, "数据一区")
     process_write (result_shu_2, output_workbook_name, 0, 3, "数据二区")
 
+    print("视听一区: ", result_shi_1)
+    print("视听二区: ", result_shi_2)
+    print("数据一区: ", result_shu_1)
+    print("数据二区: ", result_shu_2)
+
 if __name__ == "__main__":
     main()
